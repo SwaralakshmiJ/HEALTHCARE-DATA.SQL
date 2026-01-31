@@ -7,8 +7,8 @@ This project demonstrates a full-cycle Data Engineering and Analytics workflow. 
 
 ## 🛠 Tech Stack
 * **Language:** Python 3.x (Pandas for Data Manipulation)
-* **Database:** MySQL (Relational Modeling & 3NF Schema)
-* **Environment:** VS Code
+* **Database:** Microsoft SQL server MSSQL (Relational Modeling & 3NF Schema)
+* **Environment:** VS Code (Python) 
 
 ---
 
