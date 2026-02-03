@@ -19,7 +19,7 @@ This project follows the standard data engineering lifecycle:
 *Transform: Using Python to handle "dirty data." This includes deduplication (removing 534 redundant entries) and case standardization.
 
 *Load: Migrating the high-integrity data into a MySQL environment for permanent storage.
-
+   
 ## 2. Database Normalization (3rd Normal Form)
 To ensure Data Integrity and prevent anomalies, I moved from a "Flat File" structure to a Relational Schema following 3rd Normal Form (3NF) rules:
 
@@ -36,6 +36,15 @@ The project aims to solve two specific business problems:
 
 ---
 
+# Hospital Operational Intelligence
+I built a system that cleans messy hospital data and analyzes revenue.
+
+### How it works:
+1. **Python:** Cleaned 50k+ rows and removed duplicates.
+2. **SQL:** Structured the data into a relational database.
+3. **Insight:** Found which doctors and conditions generate the most revenue.
+
+   
 ## STEPS INVOLVED 
 ## STEP 1: DATA CLEANING - PYTHON AND ETL
 The raw data contained inconsistencies that would compromise database integrity. Using Pandas, I performed the following:
