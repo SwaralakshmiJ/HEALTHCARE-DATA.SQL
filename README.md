@@ -66,6 +66,36 @@ Doctors Table: A master list of clinicians.
 
 Admissions Table: A transaction-level table linking Patients and Doctors via Foreign Keys.
 
+## 🚀 Step-by-Step Implementation
+
+### 1. Database Normalization (3NF)
+The raw data was split into three distinct tables to reduce redundancy and improve data integrity:
+- **Patients Table:** Stores unique patient demographics (Name, Age, Gender, Blood Type).
+- **Doctors Table:** Stores a master list of healthcare providers.
+- **Admissions Table:** The central transaction hub linking patients and doctors using Foreign Keys.
+
+### 2. Data Migration & Mapping
+Using SQL `INSERT INTO` and `JOIN` statements, the data was moved from the staging table (`healthcare_cleaned`) into the production schema. This step involved:
+- Cleaning column headers using `[]` brackets for spaces.
+- Using `DISTINCT` to populate Master tables.
+- Mapping primary keys to foreign keys to maintain referential integrity.
+
+### 3. Revenue Leakage Analysis (SQL)
+The core intelligence was derived using the following logic:
+- **Criteria:** Stay duration <= 1 day AND Billing Amount > $45,000.
+- **Function:** Used `DATEDIFF` to calculate the Length of Stay (LOS) between Admission and Discharge dates.
+- **Goal:** Isolate high-risk claims likely to be denied by insurance providers or indicative of billing errors.
+
+---
+
+## 📈 Key Results
+Analysis of the 55,500 records revealed:
+* **Total Leakage Cases:** 185
+* **Total Revenue at Risk:** $8.83 Million
+* **Average Anomalous Bill:** $47,759.22
+* **Primary Risk Conditions:** Hypertension & Obesity (72 combined cases)
+
+---
 ## 📁 Repository Structure
 ```text
 ├── data/
@@ -73,8 +103,6 @@ Admissions Table: A transaction-level table linking Patients and Doctors via For
 │   └── healthcare_cleaned.csv     # Output after Python processing
 ├── scripts/
 │   ├── data_cleaning.py           # Python script for ETL/Preprocessing
-│   └── analysis_queries.sql       # SQL script for Schema & Business Logic
-└── README.md                      # Project documentation (This file)
 
 
 
