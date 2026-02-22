@@ -84,7 +84,7 @@ Using SQL `INSERT INTO` and `JOIN` statements, the data was moved from the stagi
 The core intelligence was derived using the following logic:
 - **Criteria:** Stay duration <= 1 day AND Billing Amount > $45,000.
 - **Function:** Used `DATEDIFF` to calculate the Length of Stay (LOS) between Admission and Discharge dates.
-- **Goal:** Isolate high-risk claims likely to be denied by insurance providers or indicative of billing errors.
+- **Goal:** Isolate high-risk claims likely to be denied by insurance providers or indicative of billing errors
 
 ---
 
